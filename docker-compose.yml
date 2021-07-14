@@ -1,0 +1,25 @@
+version: '3'
+services:
+  nano_node_standalone:
+    build: .
+    image: nano_node_standalone
+    command: nano_node --daemon --disable_legacy_bootstrap --network test --config node.logging.log_to_cerr=true --config node.enable_voting=true
+    environment:
+      # This sets up a new genesis block that we can control, with the private key:
+      # 0000000000000000000000000000000000000000000000000000000000000000
+      # Note: you have to run ./nano_standalone/bootstrap_wallet.sh after starting this container.
+      PEER_HOST: localhost
+      NANO_TEST_GENESIS_PUB: 19D3D919475DEED4696B5D13018151D1AF88B2BD3BCFF048B45031C1F36D1858
+      NANO_TEST_GENESIS_BLOCK: '{
+        "type": "open",
+        "source": "19D3D919475DEED4696B5D13018151D1AF88B2BD3BCFF048B45031C1F36D1858",
+        "representative": "nano_18gmu6engqhgtjnppqam181o5nfhj4sdtgyhy36dan3jr9spt84rzwmktafc",
+        "account": "nano_18gmu6engqhgtjnppqam181o5nfhj4sdtgyhy36dan3jr9spt84rzwmktafc",
+        "work": "820cc9d17342799c",
+        "signature": "012B814F60A97B9C40D066C3C104383C335633D74A0566E0A0C6D1DDA7BBFA4011547AA0374B6B3146F290352E5EC6C81551032583219F8A372C236DD65BA90D"
+}'
+    ports:
+      - "17075:17075"
+      - "17076:17076"
+      - "17078:17078"
+    restart: unless-stopped
