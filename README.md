@@ -1,5 +1,5 @@
 # nano_node_standalone
-A nanocurrency node, configured as a standalone test net (not to be confused with the official test net).
+A nanocurrency node, configured as a standalone test net (not to be confused with the official test net), where you have control over the genesis funds. This is very useful for testing and debugging code that interacts with nano nodes!
 
 ## First, build and start the docker image:
 Either use docker compose:
@@ -8,7 +8,7 @@ docker-compose up --build
 ```
 Or use direct docker commands:
 ```
-docker build . -t nano_node_standalone`
+docker build . -t nano_node_standalone
 ```
 ```
 docker run \
@@ -37,7 +37,7 @@ docker run \
 ```
 
 ## Then setup a nano wallet (we use nault.cc and Navano)
-## Nault.cc
+### Nault.cc
 Go to https://nault.cc
 1. Settings > App Settings > Server Settings
    1. Server Configuration -> Custom
@@ -48,7 +48,7 @@ Go to https://nault.cc
 
 You should then get account: nano_18gmu6engqhgtjnppqam181o5nfhj4sdtgyhy36dan3jr9spt84rzwmktafc, with a huge balance!
 
-## Navano
+### Navano
 1. Install Navano from https://chrome.google.com/webstore/detail/navano/ipncmlepbgkephhmehjhnfgefeehaeab
 1. Click on the extension icon to create a wallet
 1. Click on the gear icon > Set connection
