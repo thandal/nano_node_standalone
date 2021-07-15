@@ -35,6 +35,7 @@ docker run \
 ```
 ./nano_standalone/bootstrap_wallet.sh
 ```
+NOTE: You *must* run this before using the wallets (below) to generate any transactions. Otherwise, the node will not actually vote/cement/confirm transactions. If you mess this up, you may need to kill the container, then run `docker system prune` and `docker volume prune` before restarting it. 
 
 ## Then setup a nano wallet (we use nault.cc and Navano)
 ### Nault.cc
