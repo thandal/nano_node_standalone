@@ -1,6 +1,6 @@
 version: '3'
 services:
-  nano_node_standalone:
+  nano-node:
     build: .
     image: nano_node_standalone
     command: nano_node --daemon --disable_legacy_bootstrap --network test --config node.logging.log_to_cerr=true --config node.enable_voting=true
