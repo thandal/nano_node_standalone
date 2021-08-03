@@ -4,7 +4,7 @@ A nanocurrency node, configured as a standalone test net (not to be confused wit
 ## First, build and start the docker image:
 Either use docker compose:
 ```
-docker-compose up --build
+docker-compose up --build --detach
 ```
 Or use direct docker commands:
 ```
